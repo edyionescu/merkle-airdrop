@@ -1,5 +1,8 @@
 # Merkle Airdrop claim system
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/edyionescu/merkle-airdrop)
+![GitHub License](https://img.shields.io/github/license/edyionescu/merkle-airdrop)
+
 A full-stack Merkle Airdrop system where users can claim tokens only if they're on a whitelist.
 
 Storing a massive airdrop list on-chain is expensive, so the better approach is to use a [Merkle tree](https://blog.ethereum.org/2015/11/15/merkling-in-ethereum). This is a binary tree of hashes where each leaf is a hash of the claim data (e.g., user address + position in the list + amount of tokens they're allowed to claim). The Merkle root is stored on-chain, and users prove their membership by submitting a Merkle proof, which consists of a list of sibling hashes.
