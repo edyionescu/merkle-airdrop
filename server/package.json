@@ -1,0 +1,30 @@
+{
+  "name": "merkle-airdrop-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ."
+  },
+  "keywords": [
+    "merkle-tree",
+    "erc20",
+    "airdrop",
+    "bitmaps",
+    "openzeppelin",
+    "node",
+    "express"
+  ],
+  "author": "Edy Ionescu <errorsmith@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.44.1",
+    "@openzeppelin/merkle-tree": "^1.0.8",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
