@@ -27,7 +27,7 @@ Storing a massive airdrop list on-chain is expensive, so the better approach is 
    - Verifies the Merkle proof
    - Mints tokens to the claimer
 
-![Merkle Airdrop](merkle-airdrop.png)
+![Merkle Airdrop](merkle_airdrop.png)
 
 ## Usage
 

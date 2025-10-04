@@ -18,19 +18,21 @@
 .button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  background: #4c5bff;
-  color: white;
+  font-weight: 500;
+  background: #f4f5f9;
+  color: #12131b;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s ease;
 
   &:hover {
-    background: #4338ca;
+    background: #ecedf5;
   }
 
   &:disabled {
-    background: #a5adff;
+    background: #f9fafc;
+    color: #a5a5a6;
     cursor: not-allowed;
   }
 }
