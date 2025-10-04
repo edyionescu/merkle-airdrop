@@ -21,7 +21,7 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^1.49.0",
+    "@dotenvx/dotenvx": "^1.51.0",
     "@openzeppelin/merkle-tree": "^1.0.8",
     "cors": "^2.8.5",
     "express": "^5.1.0",
