@@ -10,24 +10,27 @@ Storing a massive airdrop list on-chain is expensive, so the better approach is 
 ### System overview
 
 1. Server ([Express](https://expressjs.com/) with Merkle logic):
-
    - Stores airdrop data: `address`, `index`, `amount`
    - Returns matching proof data on request
 
 2. Client ([React](https://react.dev/) based DApp frontend, [MetaMask](https://metamask.io/)):
-
    - Presses a "Claim Tokens" button
    - Sends their address to the server
    - Receives back: `index`, `amount`, `merkleProof`
    - Calls the smart contract's `claim()` method with MetaMask
 
 3. Solidity Contract ([Foundry](https://book.getfoundry.sh/), [OpenZeppelin](https://openzeppelin.com/)):
-
    - Stores the Merkle root
    - Verifies the Merkle proof
    - Mints tokens to the claimer
 
 ![Merkle Airdrop](merkle_airdrop.png)
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) version 22+
+- [pnpm](https://pnpm.io/) version 10+
+- [forge](https://book.getfoundry.sh/getting-started/installation) version 1+
 
 ## Usage
 
@@ -38,7 +41,13 @@ Storing a massive airdrop list on-chain is expensive, so the better approach is 
    cd merkle-airdrop
    ```
 
-2. Setup contracts:
+2. Install root dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Setup contracts:
 
    ```bash
    cd contracts
@@ -49,18 +58,17 @@ Storing a massive airdrop list on-chain is expensive, so the better approach is 
 
    Note: The [make](https://www.gnu.org/software/make/) utility executes the tasks defined in `/contracts/Makefile`.
 
-3. Setup server:
+4. Setup server[^1]:
 
    ```bash
-   cd ../server
+   cd server
    cat .env.example > .env
-   npm install
-   npm run dev
+   pnpm dev
    ```
 
    Note: The sample `/server/airdrop-accounts.json` contains the default [Anvil](https://book.getfoundry.sh/anvil/) accounts and their corresponding claim data. Replace with your own data, if needed.
 
-4. Setup client:
+5. Setup client[^1]:
 
    ```bash
    cd ../client
@@ -68,8 +76,9 @@ Storing a massive airdrop list on-chain is expensive, so the better approach is 
    cat .env.example > .env
    # Replace `VITE_AIRDROP_CONTRACT_ADDRESS` in `.env` with the address of the deployed contract
 
-   npm install
-   npm run dev
+   pnpm dev
    ```
 
-5. Visit the application at [`http://localhost:5173/`](http://localhost:5173/).
+6. Visit the application at [`http://localhost:5173/`](http://localhost:5173/).
+
+[^1]: Alternatively, you can run both the client and server in parallel. Either use `pnpm dev` in the root directory, or run the task included in `.vscode/tasks.json` with `Ctrl+Shift+P` / `Cmd+Shift+P` > `Tasks: Run Task` > `Start: Client & Server`.
