@@ -29,7 +29,7 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "@dotenvx/dotenvx": "^1.51.0",
+    "@dotenvx/dotenvx": "^1.51.1",
     "@merkle-airdrop/schema": "workspace:*",
     "@tsconfig/node-lts": "^22.0.2",
     "@types/cors": "^2.8.19",
