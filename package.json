@@ -7,7 +7,7 @@
     "dev": "pnpm --parallel dev",
     "build": "pnpm --filter='@merkle-airdrop/client' build",
     "format": "prettier --write .",
-    "typecheck": "pnpm --filter='./client' typecheck && pnpm --filter='./server' typecheck"
+    "typecheck": "pnpm --filter=\"./client\" typecheck && pnpm --filter=\"./server\" typecheck"
   },
   "author": "Edy Ionescu <errorsmith@gmail.com>",
   "license": "MIT",
