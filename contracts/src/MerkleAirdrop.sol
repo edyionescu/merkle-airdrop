@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.30;
+pragma solidity 0.8.30;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {BitMaps} from "@openzeppelin/contracts/utils/structs/BitMaps.sol";
@@ -17,8 +17,6 @@ contract MerkleAirdrop is ERC20 {
     constructor(bytes32 merkleRoot) ERC20("Merkle Airdrop", "MAD") {
         i_merkleRoot = merkleRoot;
     }
-
-    receive() external payable {}
 
     fallback() external {}
 

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
 
-import {Script, console} from "forge-std/Script.sol";
+import {Script} from "forge-std/Script.sol";
 import {MerkleAirdrop} from "src/MerkleAirdrop.sol";
 
 contract DeployMerkleAirdrop is Script {

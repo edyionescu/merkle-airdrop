@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
 
-import {Test, console} from "forge-std/Test.sol";
+import {Test} from "forge-std/Test.sol";
 import {MerkleAirdrop} from "src/MerkleAirdrop.sol";
 
 contract MerkleAirdropTest is Test {
@@ -13,14 +13,14 @@ contract MerkleAirdropTest is Test {
     bytes32[] private merkleProof;
 
     function setUp() public {
-        address DEPLOYER = makeAddr("deployer");
-        vm.prank(DEPLOYER);
+        address deployer = makeAddr("deployer");
+        vm.prank(deployer);
 
         bytes32 merkleRoot = 0x61dac2143c983f86fa7548fe90a9f3171103d517db78defd1e73b101b347f2c4;
         token = new MerkleAirdrop(merkleRoot);
 
-        uint256 UNITS = 10 ** 18;
-        amount = 20 * UNITS;
+        uint256 units = 10 ** 18;
+        amount = 20 * units;
         index = 1;
         account = 0x70997970C51812dc3A010C7d01b50e0d17dc79C8;
 
